@@ -16,13 +16,13 @@ public class Collections {
         for (int z = 0; z < size; z++){
             System.out.println(array[z]); //Вывод массива на экран
         }
-        /*Объявление коллекций*/
+/*Объявление коллекций*/
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
         HashSet<Integer> hashSet = new HashSet<Integer>();
         TreeSet<Integer> treeSet = new TreeSet<Integer>();
 
-        /*Заполение коллекций данными из массива array*/
+/*Заполение коллекций данными из массива array*/
         for (int i = 0; i < size; i++) {
             arrayList.add(array[i]);
             linkedList.add(array[i]);
@@ -30,36 +30,21 @@ public class Collections {
             treeSet.add(array[i]);
         }
 
-        /*Вывод заполненных коллекций на экран*/
+/*Вывод заполненных коллекций на экран*/
         System.out.println("ArrayList " + arrayList);
         System.out.println("LinkedList " + linkedList);
         System.out.println("HashSet " + hashSet);
         System.out.println("TreeSet " + treeSet);
 
-        /*Добавление нового числа в коллекцию*/
+/*Добавление нового числа в коллекцию*/
         enterNumberAdd = readInt("Введите число для добавления в коллекцию: ");
 
-        startTask = System.nanoTime();
-        arrayList.add(enterNumberAdd);
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения добавления в ArrayList " + (endTask-startTask) + " нс");
+        System.out.println("Время выполнения добавления в ArrayList " + addNumber(arrayList,enterNumberAdd) + " нс");
+        System.out.println("Время выполнения добавления в LinkedList " + addNumber(linkedList,enterNumberAdd) + " нс");
+        System.out.println("Время выполнения добавления в HashSet " + addNumber(hashSet,enterNumberAdd) + " нс");
+        System.out.println("Время выполнения добавления в TreeSet " + addNumber(treeSet,enterNumberAdd) + " нс");
 
-        startTask = System.nanoTime();
-        linkedList.add(enterNumberAdd);
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения добавления в LinkedList " + (endTask-startTask) + " нс");
-
-        startTask = System.nanoTime();
-        hashSet.add(enterNumberAdd);
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения добавления в HashSet " + (endTask-startTask) + " нс");
-
-        startTask = System.nanoTime();
-        treeSet.add(enterNumberAdd);
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения добавления в TreeSet " + (endTask-startTask) + " нс");
-
-        /*Вывод коллекций на экран после добавления нового числа*/
+/*Вывод коллекций на экран после добавления нового числа*/
         System.out.println("");
         System.out.println("Коллекции после добавления числа");
         System.out.println("ArrayList " + arrayList);
@@ -67,30 +52,15 @@ public class Collections {
         System.out.println("HashSet " + hashSet);
         System.out.println("TreeSet " + treeSet);
 
-        /*Добавление нового числа в коллекцию*/
+/*Удаление числа из коллекции*/
         enterNumberRemove = readInt("Введите число для удаления из коллекции: ");
 
-        startTask = System.nanoTime();
-        arrayList.remove(new Integer(enterNumberRemove));
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения удаления в ArrayList " + (endTask-startTask) + " нс");
+        System.out.println("Время выполнения добавления в ArrayList " + removeNumber(arrayList,enterNumberRemove) + " нс");
+        System.out.println("Время выполнения добавления в LinkedList " + removeNumber(linkedList,enterNumberRemove) + " нс");
+        System.out.println("Время выполнения добавления в HashSet " + removeNumber(hashSet,enterNumberRemove) + " нс");
+        System.out.println("Время выполнения добавления в TreeSet " + removeNumber(treeSet,enterNumberRemove) + " нс");
 
-        startTask = System.nanoTime();
-        linkedList.remove(new Integer(enterNumberRemove));
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения удаления в LinkedList " + (endTask-startTask) + " нс");
-
-        startTask = System.nanoTime();
-        hashSet.remove(new Integer(enterNumberRemove));
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения удаления в HashSet " + (endTask-startTask) + " нс");
-
-        startTask = System.nanoTime();
-        treeSet.remove(new Integer(enterNumberRemove));
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения удаления в TreeSet " + (endTask-startTask) + " нс");
-
-        /*Вывод коллекций на экран после удаления числа*/
+/*Вывод коллекций на экран после удаления числа*/
         System.out.println("");
         System.out.println("Коллекции после удаления числа");
         System.out.println("ArrayList " + arrayList);
@@ -98,42 +68,15 @@ public class Collections {
         System.out.println("HashSet " + hashSet);
         System.out.println("TreeSet " + treeSet);
 
-        /*поиск числа в коллекции*/
+/*поиск числа в коллекции*/
         enterNumberGet = readInt("Введите число для поиска в коллекции: ");
 
-        startTask = System.nanoTime();
-        if (arrayList.contains(new Integer (enterNumberGet))) {
-            System.out.println(enterNumberGet);}
-        else
-        {System.out.println("Число в ArrayList не найдено");}
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения поиска в ArrayList " + (endTask-startTask) + " нс");
+        System.out.println("Время выполнения добавления в ArrayList " + getNumber(arrayList,enterNumberGet) + " нс");
+        System.out.println("Время выполнения добавления в LinkedList " + getNumber(linkedList,enterNumberGet) + " нс");
+        System.out.println("Время выполнения добавления в HashSet " + getNumber(hashSet,enterNumberGet) + " нс");
+        System.out.println("Время выполнения добавления в TreeSet " + getNumber(treeSet,enterNumberGet) + " нс");
 
-        startTask = System.nanoTime();
-        if (linkedList.contains(new Integer (enterNumberGet))) {
-            System.out.println(enterNumberGet);}
-        else
-        {System.out.println("Число в LinkedList не найдено");}
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения поиска в LinkedList " + (endTask-startTask) + " нс");
-
-        startTask = System.nanoTime();
-        if (hashSet.contains(new Integer (enterNumberGet))) {
-            System.out.println(enterNumberGet);}
-        else
-        {System.out.println("Число в HashSet не найдено");}
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения поиска в HashSet " + (endTask-startTask) + " нс");
-
-        startTask = System.nanoTime();
-        if (treeSet.contains(new Integer (enterNumberGet))) {
-            System.out.println(enterNumberGet);}
-        else
-        {System.out.println("Число в TreeSet не найдено");}
-        endTask = System.nanoTime();
-        System.out.println("Время выполнения поиска в TreeSet " + (endTask-startTask) + " нс");
-
-        /*Вывод коллекций на экран после поиска числа*/
+/*Вывод коллекций на экран после поиска числа*/
         System.out.println("");
         System.out.println("Коллекции после поиска числа");
         System.out.println("ArrayList " + arrayList);
@@ -149,4 +92,36 @@ public class Collections {
         int res = in.nextInt();
         return res;
     }
+
+    public static long addNumber(Collection addCollection, int enterNumber){
+        long startTask, endTask, resultTime;
+        resultTime=0;
+        startTask = System.nanoTime();
+        addCollection.add(enterNumber);
+        endTask = System.nanoTime();
+        resultTime = endTask - startTask;
+        return resultTime;
+    }
+
+    public static long removeNumber(Collection removeCollection, int enterNumber){
+        long startTask, endTask, resultTime;
+        resultTime=0;
+        startTask = System.nanoTime();
+        removeCollection.remove(enterNumber);
+        endTask = System.nanoTime();
+        resultTime = endTask - startTask;
+        return resultTime;
+    }
+
+    public static long getNumber(Collection getCollection, int enterNumber){
+        long startTask, endTask, resultTime;
+        resultTime=0;
+        startTask = System.nanoTime();
+        if (getCollection.contains(enterNumber))
+            System.out.println(enterNumber);
+        endTask = System.nanoTime();
+        resultTime = endTask - startTask;
+        return resultTime;
+    }
+
 }
